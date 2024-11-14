@@ -2,9 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { DataGrid, GridToolbar, GridColDef } from "@mui/x-data-grid";
 import { toast } from "react-toastify";
-import DeleteIcon from "../../assets/imagens/delete_FILL0_wght400_GRAD0_opsz24.svg";
-import EditIcon from "../../assets/imagens/edit_FILL0_wght400_GRAD0_opsz24.svg";
-import { Contrato, ProjectoDTO } from "../../models";
+import { Contrato } from "../../models";
 import { FaEdit, FaSync, FaTrash } from "react-icons/fa";
 import "./style.css";
 import { Button, Container, Modal, Typography } from "@mui/material";
@@ -19,7 +17,7 @@ const TabelaContrato: React.FC<Props> = ({ onEditContrato }) => {
   const [contrato, setContrato] = useState<Contrato>();
   const [showModal, setShowModal] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
-  const [editModalOpen, setEditModalOpen] = useState(false);
+
   const [selectedContrato, setSelectedContrato] = useState<Contrato | null>(
     null
   );
@@ -54,7 +52,7 @@ const TabelaContrato: React.FC<Props> = ({ onEditContrato }) => {
 
   const handleCloseModal = () => {
     setModalOpen(false);
-    setEditModalOpen(false);
+
     setSelectedContrato(null);
   };
 

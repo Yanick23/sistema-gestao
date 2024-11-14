@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const CircuitSimulator = () => {
   const [loading, setLoading] = useState(true); // Estado para monitorar o carregamento

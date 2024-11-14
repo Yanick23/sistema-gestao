@@ -1,24 +1,6 @@
-import { useState } from "react";
-
-import type { Contrato as ContratoDTO } from "../../models"; // Importar como tipo
-import FormContrato from "../../componentes/ContratoForm";
-import TabelaContrato from "../../componentes/tabelaContrato";
-import Oscilloscope from "../../componentes/Oscilloscope";
 import ChatbotComponent from "./chatbotComponent";
 
 function Contrato() {
-  const [selectedContrato, setSelectedContrato] = useState<ContratoDTO | null>(
-    null
-  );
-
-  const carregarContrato = (contrato: ContratoDTO) => {
-    setSelectedContrato(contrato);
-  };
-
-  const limparFormulario = () => {
-    setSelectedContrato(null);
-  };
-
   return (
     <>
       <div className="assistente-page">

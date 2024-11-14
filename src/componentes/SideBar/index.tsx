@@ -1,15 +1,11 @@
 import { useState } from "react";
-import { Link, Outlet, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./style.css";
 import { useAuth } from "../../context/AuthContextTYpe";
 import {
   FaAssistiveListeningSystems,
   FaAtom,
-  FaFileContract,
-  FaFlask,
-  FaProjectDiagram,
   FaSignOutAlt,
-  FaUsers,
 } from "react-icons/fa";
 import { Modal } from "@mui/material";
 export default function Root() {
@@ -63,7 +59,8 @@ export default function Root() {
                 }
               >
                 <Link to={`/admin/contratos`}>
-                <FaAssistiveListeningSystems style={{ marginRight: '8px' }} /> Assistente
+                  <FaAssistiveListeningSystems style={{ marginRight: "8px" }} />{" "}
+                  Assistente
                 </Link>
               </li>
             )}

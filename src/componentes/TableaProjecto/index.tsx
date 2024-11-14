@@ -2,9 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { DataGrid, GridToolbar, GridColDef } from "@mui/x-data-grid";
 
-import DeleteIcon from "../../assets/imagens/delete_FILL0_wght400_GRAD0_opsz24.svg";
-import EditIcon from "../../assets/imagens/edit_FILL0_wght400_GRAD0_opsz24.svg";
-import ViewIcon from "../../assets/imagens/visibility_FILL0_wght400_GRAD0_opsz24.svg";
 import { toast } from "react-toastify";
 import { ProjectoDTO } from "../../models";
 import { FaEdit, FaSync } from "react-icons/fa";
@@ -21,8 +18,10 @@ const TabelaProject: React.FC<TabelaProjectProps> = ({ onEditProject }) => {
   const token = localStorage.getItem("authToken");
   const URL = "http://localhost:8080/projectos";
   const [modalOpen, setModalOpen] = useState(false);
-  const [editModalOpen, setEditModalOpen] = useState(false);
-  const [selectedProjecto, setSelectedProjecto] = useState<ProjectoDTO | null>(null);
+  const [, setEditModalOpen] = useState(false);
+  const [selectedProjecto, setSelectedProjecto] = useState<ProjectoDTO | null>(
+    null
+  );
 
   const carregarProjecto = () => {
     axios
@@ -44,10 +43,9 @@ const TabelaProject: React.FC<TabelaProjectProps> = ({ onEditProject }) => {
     carregarProjecto(); // Carrega Projectos ao montar o componente
   }, []);
 
-
   const handleDelete = async () => {
     try {
-      var id = selectedProjecto?.id
+      var id = selectedProjecto?.id;
       await axios.delete(`${URL}/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -59,14 +57,12 @@ const TabelaProject: React.FC<TabelaProjectProps> = ({ onEditProject }) => {
     } catch (error) {
       console.error("Erro ao excluir projecto:", error);
       toast.error("Erro ao excluir projecto");
-        handleCloseModal();
+      handleCloseModal();
     }
   };
 
-
   const handleEdit = (projecto: ProjectoDTO) => {
     onEditProject(projecto);
-   
   };
 
   const handleOpenDeleteModal = (projecto: ProjectoDTO) => {
@@ -114,10 +110,10 @@ const TabelaProject: React.FC<TabelaProjectProps> = ({ onEditProject }) => {
               onClick={() => handleEdit(projecto)}
               style={{ marginRight: "10px" }}
             >
-            <FaEdit /> 
+              <FaEdit />
             </button>
             <button onClick={() => handleOpenDeleteModal(projecto)}>
-            <FaTrash /> 
+              <FaTrash />
             </button>
           </>
         );
@@ -177,12 +173,14 @@ const TabelaProject: React.FC<TabelaProjectProps> = ({ onEditProject }) => {
             Confirmar Exclusão
           </Typography>
           <Typography variant="body1">
-            Tem certeza de que deseja excluir o projecto  <strong>{selectedProjecto?.nome}</strong>? 
+            Tem certeza de que deseja excluir o projecto{" "}
+            <strong>{selectedProjecto?.nome}</strong>?
             <br />
-            <strong>Aviso:</strong> Ao excluir o projecto, todos os contratos associados serão excluídos automaticamente.
+            <strong>Aviso:</strong> Ao excluir o projecto, todos os contratos
+            associados serão excluídos automaticamente.
           </Typography>
           <div className="modal-actions">
-            <Button variant="contained"  onClick={handleDelete}>
+            <Button variant="contained" onClick={handleDelete}>
               Excluir
             </Button>
             <Button variant="outlined" onClick={handleCloseModal}>
@@ -191,8 +189,6 @@ const TabelaProject: React.FC<TabelaProjectProps> = ({ onEditProject }) => {
           </div>
         </Container>
       </Modal>
-
-   
     </main>
   );
 };

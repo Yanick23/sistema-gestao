@@ -1,4 +1,3 @@
-import React from "react";
 import "./style.css"; // Importa o CSS que você forneceu
 import { Outlet } from "react-router-dom";
 import Root from "../../componentes/SideBar";
