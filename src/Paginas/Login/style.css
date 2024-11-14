@@ -1,0 +1,143 @@
+.base-input {
+  border-radius: 10px;
+  font-size: 1em;
+  letter-spacing: -0.015em;
+  color: hsl(200, 19%, 18%);
+  
+  height: 50px;
+}
+
+.tela-login h6 {
+  font-weight: bolder;
+  font-size: 15px;
+}
+
+.base-input::placeholder {
+  color: #9e9e9e;
+}
+.login-card {
+  width: 380px;
+}
+.login-info h6 {
+  margin-top: 10px;
+}
+
+.login-info img {
+  width: 75px;
+}
+
+.login-link-recover {
+  font-size: 1em;
+  letter-spacing: -0.015em;
+  color: #09ba8b;
+  display: block;
+}
+
+.login-link-register {
+  font-weight: bold;
+  font-size: 1em;
+  text-align: center;
+  letter-spacing: -0.015em;
+  text-decoration-line: underline;
+  color: #09ba8b;
+  margin-left: 10px;
+}
+
+.login-submit {
+  margin-bottom: 10px;
+}
+
+.not-registered {
+  font-weight: bold;
+  font-size: 1em;
+  text-align: center;
+  letter-spacing: -0.015em;
+  color: #9e9e9e;
+}
+
+.signup-container {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.login-card {
+  padding: 15px;
+  margin: 20px;
+
+}
+
+form {
+  font-size: 0.9rem;
+}
+
+.login-card h1 {
+  font-size: 2.5em;
+  font-weight: normal;
+  text-align: center;
+  letter-spacing: -0.015em;
+  color: #263238;
+  padding: 15px;
+}
+
+.login-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.tela-login h4 {
+  max-width: 370px;
+}
+
+.tela-login {
+  height: 100vh;
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+
+
+  justify-content: center;
+}
+
+@media (min-width: 576px) {
+  .login-card {
+    padding: 15px;
+  }
+  .tela-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.login-card {
+  width: 380px;
+  padding: 15px;
+  margin: 20px;
+  border: 2px solid #09ba8b; /* Adiciona uma borda verde */
+  border-radius: 10px; /* Adiciona bordas arredondadas */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adiciona uma leve sombra */
+}
+
+.button-custom {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-custom:hover {
+  background-color: #0056b3;
+}
+
+.button-custom:focus {
+  outline: none;
+}
