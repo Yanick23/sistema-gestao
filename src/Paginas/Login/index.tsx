@@ -17,10 +17,13 @@ const handleLogin = async (
   e.preventDefault();
 
   try {
-    const response = await axios.post("http://localhost:8080/usuarios/login", {
-      email,
-      password,
-    });
+    const response = await axios.post(
+      "https://laboratorio-virtual-isutc.onrender.com/usuarios/login",
+      {
+        email,
+        password,
+      }
+    );
 
     const { token } = response.data;
     login(token); // Armazena o token e as informações do usuário no contexto
